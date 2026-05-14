@@ -1,6 +1,6 @@
 # Bundle.social API Skills
 
-[![skills.sh](https://skills.sh/b/antongulin/bundle-social-api-skill)](https://skills.sh/antongulin/bundle-social-api-skill)
+[![skills.sh](https://www.skills.sh/b/antongulin/bundle-social-api-skill)](https://skills.sh/antongulin/bundle-social-api-skill)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
 AI agent skills for the [Bundle.social API](https://api.bundle.social) — social media management platform supporting 14 platforms.
