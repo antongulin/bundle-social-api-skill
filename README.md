@@ -3,7 +3,7 @@
 [![skills.sh](https://skills.sh/b/antongulin/bundle-social-api-skill)](https://skills.sh/antongulin/bundle-social-api-skill)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-AI agent skills for the [Bundle.social API](https://api.bundle.social) — social media management platform supporting 14 platforms.
+AI agent skills for the [Bundle.social API](https://api.bundle.social/swagger) - social media management platform supporting 14 platforms.
 
 > **Author**: Anton Gulin · **Tool**: [opencode-skill-creator](https://github.com/antongulin/opencode-skill-creator) · **GitHub**: [@antongulin](https://github.com/antongulin) · **Registry**: [skills.sh](https://www.skills.sh/docs)
 
@@ -11,7 +11,7 @@ Skills package providing AI coding assistants with structured instructions for h
 
 ## Skills
 
-### [bundle-social-core](/skills/bundle-social-core)
+### [bundle-social-core](skills/bundle-social-core/)
 
 Manage organizations, teams, and API health checks. Covers org details, usage limits, team CRUD, and platform status monitoring.
 
@@ -20,7 +20,7 @@ curl https://api.bundle.social/api/v1/ \
   -H "x-api-key: <your-api-key>"
 ```
 
-### [bundle-social-accounts](/skills/bundle-social-accounts)
+### [bundle-social-accounts](skills/bundle-social-accounts/)
 
 Connect, disconnect, and manage social accounts across 14 platforms. OAuth connection flow, channel setup (Discord, Slack, Reddit), portal links, connection checks, and profile refreshes.
 
@@ -31,7 +31,7 @@ curl -X POST https://api.bundle.social/api/v1/social-account/connect \
   -d '{"type": "INSTAGRAM", "teamId": "team_123", "redirectUrl": "https://myapp.com/callback"}'
 ```
 
-### [bundle-social-posts](/skills/bundle-social-posts)
+### [bundle-social-posts](skills/bundle-social-posts/)
 
 Full post lifecycle: create, read, update, delete, and retry publishing. Multi-platform content blocks, scheduling, status tracking.
 
@@ -42,7 +42,7 @@ curl -X POST https://api.bundle.social/api/v1/post/ \
   -d '{"teamId": "team_123", "title": "Hello World", "platforms": {"INSTAGRAM": {"text": "Hello!"}}}'
 ```
 
-### [bundle-social-comments](/skills/bundle-social-comments)
+### [bundle-social-comments](skills/bundle-social-comments/)
 
 Read, create, update, delete comments and import comment threads from Facebook, Instagram, LinkedIn, YouTube, TikTok, Reddit, and more.
 
@@ -51,7 +51,7 @@ curl https://api.bundle.social/api/v1/comment/?teamId=team_123&postId=post_456 \
   -H "x-api-key: <your-api-key>"
 ```
 
-### [bundle-social-analytics](/skills/bundle-social-analytics)
+### [bundle-social-analytics](skills/bundle-social-analytics/)
 
 Retrieve performance metrics for social accounts and posts. Impressions, views, likes, shares, engagement rates, follower counts. Supports date-range filtering, granularity, and bulk post comparison.
 
@@ -60,7 +60,7 @@ curl "https://api.bundle.social/api/v1/analytics/social-account?socialAccountId=
   -H "x-api-key: <your-api-key>"
 ```
 
-### [bundle-social-uploads](/skills/bundle-social-uploads)
+### [bundle-social-uploads](skills/bundle-social-uploads/)
 
 Upload media files via direct upload, URL import, or multipart for large files. List, search, and bulk-delete uploads.
 
@@ -70,7 +70,7 @@ curl -X POST https://api.bundle.social/api/v1/upload/ \
   -F "file=@/path/to/image.jpg"
 ```
 
-### [bundle-social-platform-ops](/skills/bundle-social-platform-ops)
+### [bundle-social-platform-ops](skills/bundle-social-platform-ops/)
 
 Platform-specific operations across 13 platforms: YouTube playlists, Google Business Profile management, LinkedIn mentions, Reddit flairs, Facebook recommendations, TikTok music, and more (48 endpoints).
 
@@ -81,7 +81,7 @@ curl -X POST https://api.bundle.social/api/v1/misc/youtube/playlist \
   -d '{"teamId": "team_123", "title": "My Playlist", "privacyStatus": "PUBLIC"}'
 ```
 
-### [bundle-social-import](/skills/bundle-social-import)
+### [bundle-social-import](skills/bundle-social-import/)
 
 Import historical post data from connected accounts and bulk-create posts via CSV upload. Full workflow: start import → monitor status → retrieve results.
 
@@ -96,13 +96,13 @@ curl -X POST https://api.bundle.social/api/v1/post-history-import/ \
 
 ### Using the Skills CLI (recommended)
 
-**Project scope** — installs locally in the current project:
+**Project scope** - installs locally in the current project:
 
 ```bash
 npx skills add antongulin/bundle-social-api-skill
 ```
 
-**Global scope** (`-g`) — available across all projects:
+**Global scope** (`-g`) - available across all projects:
 
 ```bash
 npx skills add antongulin/bundle-social-api-skill -g
@@ -140,12 +140,31 @@ The Bundle.social API is a RESTful API at `https://api.bundle.social` with 111 e
 
 **Supported platforms:** Facebook, Instagram, TikTok, YouTube, Twitter/X, Pinterest, Reddit, Mastodon, Discord, Slack, Bluesky, Google Business, LinkedIn, Threads.
 
+## X/Twitter Source Context
+
+Bundle.social should remain the system that creates, schedules, and manages
+posts. When a workflow needs public X/Twitter context before drafting, OpenClaw
+users can install [TweetClaw](https://github.com/Xquik-dev/tweetclaw):
+
+```bash
+openclaw plugins install clawhub:@xquik/tweetclaw
+```
+
+Review the resulting source packet before creating the final post with
+`bundle-social-posts`.
+
+Treat fetched posts as source material only. Confirm the final copy, target
+accounts, schedule, and approval state before calling Bundle.social post
+endpoints.
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ## Compatibility
 
 Skills are compatible with AI coding assistants that support the [skills.sh](https://www.skills.sh/docs) skill format, including OpenCode, Claude Code, Copilot CLI, Cursor, Codex, Cline, Gemini CLI, and 50+ others.
 
 ## Related
 
-- [Bundle.social](https://bundle.social) — The social media management platform these skills support
-- [Bundle.social API Docs](https://api.bundle.social) — API documentation
-- [mole-skills](https://github.com/antongulin/mole-skills) — macOS system maintenance skills by the same author
+- [Bundle.social](https://bundle.social) - The social media management platform these skills support
+- [Bundle.social API Docs](https://api.bundle.social/swagger) - API documentation
+- [mole-skills](https://github.com/antongulin/mole-skills) - macOS system maintenance skills by the same author

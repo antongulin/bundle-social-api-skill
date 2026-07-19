@@ -33,9 +33,9 @@ All endpoints share these common error responses:
 
 | Status | Description |
 |--------|-------------|
-| `400` | Validation error — includes Zod validation `issues` array |
-| `401` | Unauthorized — missing or invalid API key |
-| `403` | Forbidden — insufficient permissions |
+| `400` | Validation error - includes Zod validation `issues` array |
+| `401` | Unauthorized - missing or invalid API key |
+| `403` | Forbidden - insufficient permissions |
 | `404` | Resource not found |
 | `429` | Rate limited |
 | `500` | Internal server error |
@@ -55,16 +55,8 @@ Error body format:
 
 | # | Tag | Count | File |
 |---|-----|-------|------|
-| 1 | `app` | 1 | [01-app.md](./01-app.md) |
-| 2 | `organization` | 5 | [02-organization.md](./02-organization.md) |
-| 3 | `team` | 5 | [03-team.md](./03-team.md) |
-| 4 | `socialAccount` | 11 | [04-social-account.md](./04-social-account.md) |
-| 5 | `upload` | 8 | [05-upload.md](./05-upload.md) |
-| 6 | `post` | 6 | [06-post.md](./06-post.md) |
 | 7 | `analytics` | 7 | [07-analytics.md](./07-analytics.md) |
-| 8 | `comment` | 9 | [08-comment.md](./08-comment.md) |
-| 9 | `misc` | 48 | [09-misc.md](./09-misc.md) |
-| 10 | `postImport` | 6 | [10-post-import.md](./10-post-import.md) |
-| 11 | `postCSV` | 5 | [11-post-csv-import.md](./11-post-csv-import.md) |
 
-**Total: 111 endpoints** (down from 144 in raw spec — misc platform endpoints collapsed into one file)
+**Included: 7 endpoints**
+
+See the [complete API index](../../../docs/api/README.md) for all 111 endpoints.
