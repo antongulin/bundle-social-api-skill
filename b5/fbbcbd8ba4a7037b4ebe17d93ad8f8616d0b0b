@@ -1,0 +1,39 @@
+.codex/config.toml
+  s_2831b768621e3a::t_2ae4e27c4d1ee8 1-6
+.cursor/mcp.json
+  s_2831b768621e3a::t_2636bbab1ee8d0 1-12
+.gitignore
+  s_2831b768621e3a::t_cb5a7b1f102c30 1-6
+.mcp.json
+  s_2831b768621e3a::t_e57bd0111d6b4a 1-12
+.vscode/mcp.json
+  s_2831b768621e3a::t_273e9577579120 1-12
+AGENTS.md
+  s_a83220d92e2ca3::t_73f767216f02b9 1-55
+opencode.jsonc
+  s_2831b768621e3a::t_12a58c1a411f1f 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b5fbbcbd8ba4a7037b4ebe17d93ad8f8616d0b0b",
+  "prompts": {},
+  "sessions": {
+    "s_2831b768621e3a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0d19f-b6e4-7772-99fb-152f7fa5ffda",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Anton Gulin <anton@boostbusiness.ai>"
+    },
+    "s_a83220d92e2ca3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f2e00368cffeMhuZ8UnJPQiPtm",
+        "model": "deepseek-v4.1-flash"
+      },
+      "human_author": "Anton Gulin <anton@boostbusiness.ai>"
+    }
+  }
+}
