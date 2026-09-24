@@ -1,0 +1,6 @@
+# CodeGraph local index and daemon state; the MCP config files are committed.
+.codegraph/
+
+__pycache__/
+*.py[cod]
+.DS_Store
